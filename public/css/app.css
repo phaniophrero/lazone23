@@ -530,13 +530,6 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: center;
-  transition: 0.4s ease-in-out;
-}
-
-.product:hover {
-  box-shadow: 0 0.3rem 0.5rem #191d32;
-  transform: scale(1.1);
-  transition: 0.4s ease-in-out;
 }
 
 .product-name {

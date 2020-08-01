@@ -11,10 +11,10 @@
                 <div class="product">
                     <a class="product-img-wrap" href="{{ route('shop.show', $product->slug) }}">
             <!-- Metoda de a incarca img este folosita pentru Voyager Admin -->
-                        <img class="product-img" src="{{ productImage($product->image) }}" alt="Product"></a>
+                        {{-- <img class="product-img" src="{{ productImage($product->image) }}" alt="Product"></a> --}}
 
             <!-- Metoda de a incarca img este folosita inainte de Voyager Admin -->
-                        {{-- <img class="product-img" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="Product"></a> --}}
+                        <img class="product-img" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="Product"></a>
 
                     <a class="product-link" href="{{ route('shop.show', $product->slug) }}"><span class="product-name">{{ $product->name }}</span></a>
 
@@ -27,9 +27,9 @@
                     <a class="product-more-btn" href="{{ route('shop.show', $product->slug) }}">More</a>
                 </div>
                 @endforeach
-                
+
             </div> <!-- End Products -->
-            
+
             <div class="text-product button-container">
                 <a href="{{ route('shop.index') }}" class="button-more">View more products</a>
             </div>

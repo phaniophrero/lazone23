@@ -1,7 +1,7 @@
 <header id="main-header" class="header-main">
     <nav class="main-navbar">
         <div class="logo-wrapper">
-            <a class="logo-link" href="/"><img class="" src="" alt="">LaZone23</a>
+            <a class="logo-link" href="/"><img class="logoImg" src="/img/logo.png" alt=""></a>
             @if (! (request()->is('checkout') || request()->is('guestCheckout')))
             {{ menu('main', 'include.menus.main') }}
             @endif

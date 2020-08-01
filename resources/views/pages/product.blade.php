@@ -25,25 +25,28 @@
     <div class="product-page-container-img">
         <div class="product-page-wrap-img">
     <!-- Metoda asta merge de a incarca img merge cu Voyager Admin Dashboard -->
-            <img id="currentImage" class="product-page-img active" src="{{ productImage($product->image) }}" alt="product">
+            {{-- <img id="currentImage" class="product-page-img active" src="{{ productImage($product->image) }}" alt="product"> --}}
     <!--Metoda de jos de a incarca img mergea inainte de a adauga Voyager Admin -->
-            {{-- <img id="imageProduct" class="product-page-img" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="product"> --}}
+            <img id="currentImage" class="product-page-img active" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="product">
         </div>
 
         <div class="product-page-images-thumb">
-            {{-- <div class="images-thumb-wrapper selected">
-                <img class="images-thumb" src="{{ asset('img/products/desktop-1.png') }}" alt="product">
-            </div>--}}
-
             <div class="images-thumb-wrapper selected">
-                <img class="images-thumb" src="{{ productImage($product->image) }}" alt="product">
+                <img class="images-thumb" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="product">
             </div>
+
+            {{-- <div class="images-thumb-wrapper selected">
+                <img class="images-thumb" src="{{ productImage($product->image) }}" alt="product">
+            </div> --}}
 
             @if ($product->images)
                 @foreach (json_decode($product->images, true) as $image)
-                <div class="images-thumb-wrapper">
+                {{-- <div class="images-thumb-wrapper">
                     <img class="images-thumb" src="{{ productImage($image) }}" alt="product">
-                </div>
+                </div> --}}
+                <div class="images-thumb-wrapper">
+                <img class="images-thumb" src="{{ asset('img/products/desktop-1.png') }}" alt="product">
+            </div>
                 @endforeach
             @endif
 
@@ -194,7 +197,7 @@
 
 
 @section('extra-js')
-    
+
     <script>
         (function(){
             const currentImage = document.querySelector('#currentImage');

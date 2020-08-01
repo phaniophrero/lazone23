@@ -70,10 +70,10 @@
                 <div class="product">
                     <a class="product-img-wrap" href="{{ route('shop.show', $product->slug) }}">
             <!-- Metoda de a incarca img este folosita pentru Voyager Admin -->
-                        <img class="product-img" src="{{ productImage($product->image) }}" alt="Product">
+                        {{-- <img class="product-img" src="{{ productImage($product->image) }}" alt="Product"> --}}
 
             <!-- Metoda de a incarca img este folosita inainte de Voyager Admin -->
-                        {{-- <img class="product-img" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="Product"> --}}
+                        <img class="product-img" src="{{ asset('img/products/'.$product->slug.'.png') }}" alt="Product">
                     </a>
                     <a class="product-link" href="{{ route('shop.show', $product->slug) }}"><span
                             class="product-name">{{ $product->name }}</span></a>
@@ -87,12 +87,12 @@
                 @endforelse
 
             </div> <!-- End Products -->
-            
+
         </div>
         {{-- <div class="text-product button-container">
             <a href="#" class="button-more">View more products</a>
         </div> --}}
-        <hr class="line-title-products">   
+        <hr class="line-title-products">
         {{ $products->appends(request()->input())->links() }}
     </div> <!-- END Container Products -->
 

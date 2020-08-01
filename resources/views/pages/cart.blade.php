@@ -42,10 +42,10 @@
                     <div class="cart-product-img-wrap">
                         <a class="product-img-wrap" href="{{ route('shop.show', $item->model->slug) }}">
             <!-- Metoda de a incarca img este folosita pentru de Voyager Admin -->
-                            <img class="cart-product-img" src="{{ productImage($item->model->image) }}">
+                            {{-- <img class="cart-product-img" src="{{ productImage($item->model->image) }}"> --}}
 
             <!-- Metoda de a incarca img este folosita inainte de Voyager Admin -->
-                            {{-- <img class="cart-product-img" src="{{ asset('img/products/'.$item->model->slug.'.png') }}"> --}}
+                            <img class="cart-product-img" src="{{ asset('img/products/'.$item->model->slug.'.png') }}">
                         </a>
                     </div>
                     <div class="cart-ib-info-meta">
@@ -77,7 +77,7 @@
                         @for ($i = 1; $i < 5 + 1 ; $i++) <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}
                             </option>
                         @endfor
-                            
+
                     </select>
                     {{-- <input type="text" value="3" class="cart-qty" /> --}}
                     {{--  <span class="cart-table-price"><span class="price-x">x</span>  </span> --}}
@@ -103,7 +103,7 @@
 
     @if (! session()->has('coupon'))
         <a href="#" class="have-code-link">Have a Code ?</a>
-        <div class="have-code-container"> 
+        <div class="have-code-container">
             <form class="promo-code-form" action="{{ route('coupon.store') }}" method="POST">
             {{ csrf_field() }}
                 <input class="promo-code-input" type="text" name="coupon_code" id="coupon_code">
@@ -129,7 +129,7 @@
                     <li class="cart-page-subtotal"><span class="cart-page-sb-label">Subtotal</span></li>
                     <li class="cart-page-subtotal"><span class="cart-page-sb-label">
                         @if (session()->has('coupon'))
-                            <div class="checkout-discount">Discount({{ session()->get('coupon')['name'] }})  
+                            <div class="checkout-discount">Discount({{ session()->get('coupon')['name'] }})
                                 <form action="{{ route('coupon.destroy') }}" method="POST" style="display: inline">
                                     {{ csrf_field() }}
                                     {{ method_field('delete') }} <br>
@@ -139,9 +139,9 @@
                                 <hr>
                                 New Subtotal <br>
                             </div>
-                        @endif    
+                        @endif
                     </span></li>
-    
+
                     <li class="cart-page-shipping"><span class="cart-page-sb-label">Tax(19%)</span></li>
                     <li class="cart-page-grand-total"><span class="cart-page-sb-label"><strong>Total</strong></span></li>
                 </ul>

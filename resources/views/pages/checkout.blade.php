@@ -122,12 +122,12 @@
                         <div class="checkout-table-row-left">
                             <div class="checkout-table-img-wrap">
             <!-- Metoda de a incarca img este folosita pentru Voyager Admin -->
-                                <img src="{{ productImage($item->model->image) }}" alt="item"
-                                    class="checkout-table-img">
+                                {{-- <img src="{{ productImage($item->model->image) }}" alt="item"
+                                    class="checkout-table-img"> --}}
 
             <!-- Metoda de a incarca img este folosita inainte de Voyager Admin -->
-                                {{-- <img src="{{ asset('img/products/'.$item->model->slug.'.png')}}" alt="item"
-                                    class="checkout-table-img"> --}}
+                                <img src="{{ asset('img/products/'.$item->model->slug.'.png')}}" alt="item"
+                                    class="checkout-table-img">
                             </div>
                             <div class="checkout-item-details">
                                 <div class="checkout-table-item">{{ $item->model->name }}</div>
